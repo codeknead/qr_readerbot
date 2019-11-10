@@ -36,6 +36,7 @@ else:
 
 def start_handler(update, bot):
     # Creating a handler-function for /start command
+    logger.info("Start Command")
     logger.info("User {} started bot".format(update.effective_user["id"]))
     update.message.reply_text("Hello from QReaderBot!\nSend me a QR Code")
 
