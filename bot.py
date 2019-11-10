@@ -66,6 +66,7 @@ def decode(update: Update, context: CallbackContext):
 if __name__ == '__main__':
     logger.info("Starting bot")
     updater = Updater(TOKEN, use_context=True)
+    logger.info("Add handler")
     try:
         updater.dispatcher.add_handler(CommandHandler("start", start_handler))
         updater.dispatcher.add_handler(MessageHandler(Filters.photo, decode))
