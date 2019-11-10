@@ -37,12 +37,14 @@ else:
 @run_async
 def start_handler(update: Update, context: CallbackContext):
     # Creating a handler-function for /start command
+    del context
     logger.info("User {} started bot".format(update.effective_user["id"]))
     update.message.reply_text("Hello from QReaderBot!\nSend me a QR Code")
 
 
 @run_async
 def decode(update: Update, context: CallbackContext):
+    logger.info("Starting read qr code")
     del context
     update.message.chat_id
 
