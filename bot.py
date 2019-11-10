@@ -37,7 +37,7 @@ def start_handler(update, bot):
     logger.info("Start Command")
     logger.info("User {} started bot".format(update.effective_user["id"]))
     name = update.message.from_user.first_name
-    update.message.reply_text("Hello " + name + "from QReaderBot!\nPlease, send me a QR Code.")
+    update.message.reply_text("Hello " + name + " from QReaderBot!\nPlease, send me a QR Code.")
 
 
 @run_async
