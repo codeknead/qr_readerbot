@@ -67,7 +67,6 @@ if __name__ == '__main__':
     logger.info("Starting bot")
     updater = Updater(TOKEN, use_context=True)
     try:
-        updater.bot.deleteWebhook()
         updater.dispatcher.add_handler(CommandHandler("start", start_handler))
         updater.dispatcher.add_handler(MessageHandler(Filters.photo, decode))
         run(updater)
