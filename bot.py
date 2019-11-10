@@ -1,6 +1,5 @@
 import logging
 import os
-import sys
 import reader
 
 from telegram import Update
@@ -31,14 +30,14 @@ elif mode == "prod":
         updater.bot.set_webhook("https://{}.herokuapp.com/{}".format(HEROKU_APP_NAME, TOKEN))
 else:
     logger.error("No MODE specified!")
-    sys.exit(1)
 
 
 def start_handler(update, bot):
     # Creating a handler-function for /start command
     logger.info("Start Command")
     logger.info("User {} started bot".format(update.effective_user["id"]))
-    update.message.reply_text("Hello from QReaderBot!\nSend me a QR Code")
+    name = update.message.from_user.first_name
+    update.message.reply_text("Hello " + name + "from QReaderBot!\nPlease, send me a QR Code.")
 
 
 @run_async
