@@ -39,7 +39,17 @@ def decode_and_select(image_file):
     inverted = 255 - thresholded  # black-in-white
     cv2.imwrite("IMGInverted.jpg", inverted)
 
-    results = decode(inverted, symbols=[ZBarSymbol.QRCODE])
+    results = decode(inverted, symbols=[ZBarSymbol.QRCODE,
+                                        ZBarSymbol.CODABAR,
+                                        ZBarSymbol.CODE128,
+                                        ZBarSymbol.EAN13,
+                                        ZBarSymbol.DATABAR,
+                                        ZBarSymbol.COMPOSITE,
+                                        ZBarSymbol.CODE39,
+                                        ZBarSymbol.CODE93,
+                                        ZBarSymbol.EAN8,
+                                        ZBarSymbol.ISBN13,
+                                        ZBarSymbol.ISBN10])
 
     if results:
         decoded_text = []
