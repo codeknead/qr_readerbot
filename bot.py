@@ -34,10 +34,8 @@ else:
     sys.exit(1)
 
 
-@run_async
-def start_handler(update: Update, context: CallbackContext):
+def start_handler(update, bot):
     # Creating a handler-function for /start command
-    del context
     logger.info("User {} started bot".format(update.effective_user["id"]))
     update.message.reply_text("Hello from QReaderBot!\nSend me a QR Code")
 
